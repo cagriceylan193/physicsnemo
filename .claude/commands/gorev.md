@@ -1,6 +1,6 @@
 ---
 description: Kişisel ajanlardan birine görev ver. Kullanım - /gorev <ajan> <görev> (ajan adı verilmezse uygun olan seçilir)
-argument-hint: "[takvim|arastirma|brifing|borsa|akademik|finansal|haftalik] <görev açıklaması>"
+argument-hint: "[takvim|arastirma|brifing|borsa|akademik|finansal|haftalik|yasam] <görev açıklaması>"
 ---
 
 Kullanıcı şu görevi verdi: $ARGUMENTS
@@ -12,12 +12,13 @@ Kişisel ajanlar (.claude/agents/):
 - `borsa-ogretmeni` – borsa eğitimi ve finansal danışmanlık (eğitim amaçlı)
 - `akademik-hedef-kocu` – akademik hedefler ve haftalık akademik değerlendirme
 - `finansal-hedef-kocu` – parasal hedefler, bütçe ve haftalık para değerlendirmesi
+- `yasam-kocu` – motivasyon, enerji, stres, erteleme ve yaşam dengesi
 
 `haftalik` kısaltması: önce akademik-hedef-kocu, sonra finansal-hedef-kocu ile haftalık
 değerlendirmeyi sırayla yap; ikisi bittikten sonra tek bir "Haftanın özeti" ver.
 
 Adımlar:
-1. Görevin ilk kelimesi bir ajan kısaltmasıysa (takvim, arastirma, brifing, borsa, akademik, finansal, haftalik)
+1. Görevin ilk kelimesi bir ajan kısaltmasıysa (takvim, arastirma, brifing, borsa, akademik, finansal, haftalik, yasam)
    o ajanı kullan; değilse görevin içeriğine en uygun ajanı seç.
    Görev birden fazla ajana dokunuyorsa sırayla çalıştır ve sonuçları birleştir.
 2. Ajanı Agent aracıyla, görevi eksiksiz ve kendi başına anlaşılır biçimde yazarak başlat.
